@@ -24,9 +24,9 @@ button {
 }
 #delete-btn {
     background: white;
-    color: #5f9341;
+    color: #e40f0fe5;
     padding: 10px 20px;
-    border:1px solid #5f9341;
+    border:1px solid #e40f0fe5;
     font-weight: bold;
 }
 
@@ -38,6 +38,7 @@ ul {
 
 li {
     margin-top: 5px;
+    padding: 5px 0;
 }
 
 li a {

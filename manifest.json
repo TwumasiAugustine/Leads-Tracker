@@ -1,14 +1,15 @@
 {
     "manifest_version": 3,
     "version": "1.2.1",
-    "name": "Leads Tracker",
-    "description": "Leads Tracker",
+    "name": "Project Tracker",
+    "description": "Project Tracker",
     "action": {
         "default_popup": "index.html",
-        "default_title": "Leads Tracker",
+        "default_title": "Project Tracker",
         "default_icon": "icon.png"
     },
     "permissions": [
-        "tabs"
+        "tabs",
+        "notifications"
     ]
 }
