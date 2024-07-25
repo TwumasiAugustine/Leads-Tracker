@@ -1,15 +1,25 @@
 {
-    "manifest_version": 3,
-    "version": "1.2.1",
-    "name": "Project Tracker",
-    "description": "Project Tracker",
-    "action": {
-        "default_popup": "index.html",
-        "default_title": "Project Tracker",
-        "default_icon": "icon.png"
-    },
-    "permissions": [
-        "tabs",
-        "notifications"
-    ]
+	"manifest_version": 3,
+	"version": "1.2.5",
+	"name": "Project URL Tracker",
+	"description": "Track your projects URLs and stay organized with this simple and intuitive extension.",
+	"offline_enabled": true,
+	"action": {
+		"default_popup": "index.html",
+		"default_title": "Project URL Tracker",
+		"default_icon": "icon.png"
+	},
+	"permissions": ["tabs", "activeTab", "notifications", "storage"],
+	"background": "service_worker.js",
+	"icons": {
+		"16": "icon.png",
+		"48": "icon.png",
+		"128": "icon.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["service_worker.js"]
+		}
+	]
 }

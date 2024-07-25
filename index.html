@@ -1,29 +1,50 @@
-<!-- eslint-disable react/react-in-jsx-scope -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css' integrity='sha512-+ouAqATs1y4kpPMCHfKHVJwf308zo+tC9dlEYK9rKe7kiP35NiP+Oi35rCFnc16zdvk9aBkDUtEO3tIPl0xN5w==' crossorigin='anonymous'/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"/>
-        <link rel="stylesheet" href="index.css"/>
-        <title>Hosted Project Links</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Track your projects URLs and stay organized with this simple and intuitive extension">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="google extension project tracker leads">
+        <link async defer rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css'
+            integrity='sha512-+ouAqATs1y4kpPMCHfKHVJwf308zo+tC9dlEYK9rKe7kiP35NiP+Oi35rCFnc16zdvk9aBkDUtEO3tIPl0xN5w=='
+            crossorigin='anonymous' />
+        <link async defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link defer rel="stylesheet" href="index.css" />
+        <link rel='manifest' href='manifest.json' />
+        <title>Project URL Tracker</title>
     </head>
     <body>
         <div id="input-form">
-            <input type="text" id="input-el" aria-label="input-el"/>
-            <!-- <div class="preview">
-                <p class="input-preview">
-                    <i class="fas fa-pencil-alt"></i>
-                    <span class="input-preview-text" id="previewer"></span>
-                </p>
-            </div> -->
-            <button id="input-btn">SAVE INPUT</button>
-            <button id="tab-btn">SAVE TAB</button>
-            <button id="delete-btn">DELETE ALL</button>
+            <div class="form-container">
+                <input type="search" placeholder='https://www.example.com/' id="input-el" aria-label="input-el" autofocus />
+                <select id="select" name="category" aria-label="category">
+                    <option value="" selected>Select</option>
+                    <option value="Useful">Useful</option>
+                    <option value="Project">Project</option>
+                </select>
+            </div>
+            <div id='save-btns'>
+                <button type="button" id="input-btn" disabled title="Save URL from your input">SAVE INPUT</button>
+                <button type="button" id="tab-btn" title="Save URL from current tab">SAVE TAB</button>
+            </div>
+            <button type="button" id="delete-btn" title='Double click to delete all saved URLs'>DELETE ALL</button>
+            </div>
+            <div>
+                <p id="error-message"></p>
+            <div id="list-container">
+                <div id="useful">
+                    <h5 id="usefulH"></h5>
+                    <ul id="ul-el">
+
+                    </ul>
+                </div>
+                <div id="project">
+                    <h5 id="projectH"></h5>
+                    <ul id="ul-el2"></ul>
+                </div>
+            </div>
         </div>
-        <div class="links-container">
-            <ul id="ul-el">
-                
-            </ul>
-        </div>
-        <script src="index.js"></script>
+        <script defer async src="index.js"></script>
+        <script defer async src="service_worker.js"></script>
     </body>
 </html>
